@@ -24,6 +24,6 @@ def new_word():
 
 @glossary.route("/glossary")
 @login_required
-def glossary():
-    glossary = CWord.query.order_by(CWord.date_posted.desc())
+def show_glossary():
+    glossary = CWord.query.all()
     return render_template('glossary.html', title='Glossary', glossary=glossary)

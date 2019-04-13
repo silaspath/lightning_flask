@@ -4,11 +4,11 @@
         <article class="media content-section">
           <div class="media-body">
             <div class="article-metadata">
-              <a class="mr-2" href="{{ url_for('users.user_posts'}}">Jaydarius</a>
-              <small class="text-muted">{{ post.date_posted.strftime('%d %b %Y') }}</small>
+              <a class="mr-2" href="{{ url_for('users.account') }}">Jaydarius</a>
+              <small class="text-muted">test</small>
             </div>
-            <h2><a class="article-title" href="{{ url_for('posts.post', post_id=post.id) }}">{{ post.title }}</a></h2>
-            <p class="article-content">{{ post.content }}</p>
+            <h2><a class="article-title" href="#">{{ word.word }}</a></h2>
+            <p class="article-content">{{ word.definition }}</p>
           </div>
         </article>
     {% endfor %}
