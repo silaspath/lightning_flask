@@ -45,3 +45,9 @@ class Post(db.Model):
 
     def __repr__(self):
         return f"Post('{self.title}', '{self.date_posted}')"
+
+class CWord(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    word = db.Column(db.String(30), nullable=False)
+    definition = db.Column(db.Text, nullable=False)
+
