@@ -27,10 +27,14 @@ def create_app(config_class=Config):
     from lightning_flask.users.routes import users
     from lightning_flask.posts.routes import posts
     from lightning_flask.main.routes import main
+    from lightning_flask.contact.routes import contact
     from lightning_flask.errors.handlers import errors
+
+    
     app.register_blueprint(users)
     app.register_blueprint(posts)
     app.register_blueprint(main)
+    app.register_blueprint(contact)
     app.register_blueprint(errors)
 
     return app
