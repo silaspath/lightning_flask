@@ -10,7 +10,7 @@ main = Blueprint('main', __name__)
 @main.route("/home")
 def home():  # AKA view function
     page = request.args.get('page', 1, type=int)  # by default, add a query parameter to this route. It's default value is 1
-    posts = Post.query.order_by(Post.date_posted.desc()).paginate(page=page, per_page=5)
+    posts = Post.query.order_by(Post.date_posted.desc()).paginate(page=page, per_page=7)
     return render_template('home.html', posts=posts)
 
 @main.route("/about")

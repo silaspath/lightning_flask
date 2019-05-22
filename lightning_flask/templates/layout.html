@@ -7,16 +7,17 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dev-main.css') }}">
-    <link rel="shortcut icon" type="image/png" herf="lightning_flask\static\profile_pics\731dee433d2b1370.jpg">
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/sticky-footer/">
+    <link href="sticky-footer.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
     {% if title %}
         <title>Lightning in My Hands - {{ title }}</title>
     {% else %}
         <title>Lightning in My Hands</title>
     {% endif %}
 </head>
-<body>
+<body class="d-flex flex-column h-100">
+    <div id="page-container" class="container-fluid pr-0 pl-0 h-100 d-flex flex-column">
     <header class="site-header">
       <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
         <div class="container">
@@ -45,7 +46,7 @@
         </div>
       </nav>
     </header>
-    <main role="main" class="container">
+    <main role="main" class="container flex-shrink-0">
       <!-- Remember that grid columns should add up to twelve for a row. More than that, columns will stack no matter the viewport. -->
       <div class="row">
         <div class="col-md-12">
@@ -77,12 +78,28 @@
         -->
       </div>
     </main>
-
+    <footer class="d-flex justify-content-center mt-auto">
+        <div class="d-flex justify-content-between col-md-8 col-md-offset-2 mb-3 mt-5">
+            <!-- Copyright Info -->
+                <div class="align-left">
+                    
+                        <a class="font-weight-bold small kf-blue kf-links" href="#">Link1</a> |
+                    
+                    <a class="font-weight-bold small kf-blue kf-links" href="/">Link2</a> |
+                    <a class="font-weight-bold small kf-blue kf-links" href="/">Link3</a>
+                </div>
+                <div class="align-right small">
+                    Crafted with Love by <a class="font-weight-bold kf-blue kf-links" href="#" target="_blank">Me</a>
+                </div>
+            <!-- END Copyright Info -->
+        </div>
+    </footer>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-</body>
+  </div>
+  </body>
 </html>
