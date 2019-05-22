@@ -29,6 +29,12 @@ p {
   font-weight: 500;
 }
 
+.nav-img {
+  height: 65px;
+  width: 65px;
+  margin-right: 16px;
+}
+
 .content-section {
   background: #212529;
   padding: 10px 20px;
@@ -51,9 +57,10 @@ a.article-title:hover {
 }
 
 .article-img {
-  height: 65px;
-  width: 65px;
+  height: 30px;
+  width: 30px;
   margin-right: 16px;
+  border-radius: 50%;
 }
 
 .article-metadata {
