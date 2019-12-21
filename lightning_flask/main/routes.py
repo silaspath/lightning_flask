@@ -16,3 +16,7 @@ def home():  # AKA view function
 @main.route("/about")
 def about():
     return render_template('about.html', title='About')
+
+@main.route("/readinglist")
+def reading_list():
+    return render_template('reading.html', title='Reading List')

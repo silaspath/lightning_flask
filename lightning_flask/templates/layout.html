@@ -29,6 +29,7 @@
             <div class="navbar-nav mr-auto">
               <a class="nav-item nav-link" href="{{ url_for('main.home') }}">Home</a>
               <a class="nav-item nav-link" href="{{ url_for('main.about') }}">About</a>
+              <a class="nav-item nav-link" href="{{ url_for('main.reading_list') }}">Reading List</a>
               <a class="nav-item nav-link" href="{{ url_for('contact.email') }}">Contact</a>
             </div>
             <!-- Navbar Right Side --> 
@@ -38,7 +39,8 @@
                 <a class="nav-item nav-link" href="{{ url_for('users.account') }}">Account</a>
                 <a class="nav-item nav-link" href="{{ url_for('users.logout') }}">Logout</a>
               {% else %}
-                <a class="nav-item nav-link" href="{{ url_for('users.login') }}">Login</a>
+               <!-- <a class="nav-item nav-link" href="{{ url_for('users.login') }}">Login</a>-->
+                
                 <!--<a class="nav-item nav-link" href="{{ url_for('users.register') }}">Register</a>-->
               {% endif %}
             </div>
