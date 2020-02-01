@@ -7,8 +7,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/sticky-footer/">
-    <link href="sticky-footer.css" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
     {% if title %}
         <title>Lightning in My Hands - {{ title }}</title>
@@ -16,8 +15,7 @@
         <title>Lightning in My Hands</title>
     {% endif %}
 </head>
-<body class="d-flex flex-column h-100">
-    <div id="page-container" class="container-fluid pr-0 pl-0 h-100 d-flex flex-column">
+<body>
     <header class="site-header">
       <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
         <div class="container">
@@ -27,20 +25,19 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarToggle">
             <div class="navbar-nav mr-auto">
-              <a class="nav-item nav-link" href="{{ url_for('main.home') }}">Home</a>
+              <a class="nav-item nav-link" href="{{ url_for('main.home') }}">Views</a>
               <a class="nav-item nav-link" href="{{ url_for('main.about') }}">About</a>
               <a class="nav-item nav-link" href="{{ url_for('main.reading_list') }}">Reading List</a>
               <a class="nav-item nav-link" href="{{ url_for('contact.email') }}">Contact</a>
             </div>
-            <!-- Navbar Right Side --> 
+            <!-- Navbar Right Side -->
             <div class="navbar-nav">
               {% if current_user.is_authenticated %}
                 <a class="nav-item nav-link" href="{{ url_for('posts.new_post') }}">New Post</a>
                 <a class="nav-item nav-link" href="{{ url_for('users.account') }}">Account</a>
                 <a class="nav-item nav-link" href="{{ url_for('users.logout') }}">Logout</a>
               {% else %}
-               <!-- <a class="nav-item nav-link" href="{{ url_for('users.login') }}">Login</a>-->
-                
+                <!--<a class="nav-item nav-link" href="{{ url_for('users.login') }}">Login</a>-->
                 <!--<a class="nav-item nav-link" href="{{ url_for('users.register') }}">Register</a>-->
               {% endif %}
             </div>
@@ -48,7 +45,7 @@
         </div>
       </nav>
     </header>
-    <main role="main" class="container flex-shrink-0">
+    <main role="main" class="container">
       <!-- Remember that grid columns should add up to twelve for a row. More than that, columns will stack no matter the viewport. -->
       <div class="row">
         <div class="col-md-12">
@@ -61,47 +58,36 @@
                     {% endfor %}
                 {% endif %}
             {% endwith %}
-          {% block content %}{% endblock %}
-        </div>
-        <!--
-        <div class="col-md-4">
-          <div class="content-section">
-            <h3>Our Sidebar</h3>
-            <p class='text-muted'>You can put any information here you'd like.
-              <ul class="list-group">
-                <li class="list-group-item list-group-item-light">Latest Posts</li>
-                <li class="list-group-item list-group-item-light">Announcements</li>
-                <li class="list-group-item list-group-item-light">Calendars</li>
-                <li class="list-group-item list-group-item-light">etc</li>
-              </ul>
-            </p>
+            {% block content %}{% endblock %}
           </div>
+          <!--
+          <div class="col-md-4">
+            <div class="content-section">
+              <h3>Our Sidebar</h3>
+              <p class='text-muted'>You can put any information here you'd like.
+                <ul class="list-group">
+                  <li class="list-group-item list-group-item-light">Latest Posts</li>
+                  <li class="list-group-item list-group-item-light">Announcements</li>
+                  <li class="list-group-item list-group-item-light">Calendars</li>
+                  <li class="list-group-item list-group-item-light">etc</li>
+                </ul>
+              </p>
+            </div>
+          </div>
+          -->
         </div>
-        -->
-      </div>
-    </main>
-    <footer class="d-flex justify-content-center mt-auto">
-        <div class="d-flex justify-content-between col-md-8 col-md-offset-2 mb-3 mt-5">
-            <!-- Copyright Info -->
-                <div class="align-left">
-                    
-                        <a class="font-weight-bold small kf-blue kf-links" href="#">Link1</a> |
-                    
-                    <a class="font-weight-bold small kf-blue kf-links" href="/">Link2</a> |
-                    <a class="font-weight-bold small kf-blue kf-links" href="/">Link3</a>
-                </div>
-                <div class="align-right small">
-                    Crafted with Love by <a class="font-weight-bold kf-blue kf-links" href="#" target="_blank">Me</a>
-                </div>
-            <!-- END Copyright Info -->
+      </main>
+      <footer class="footer mt-auto py-3">
+        <div class="container">
+            <span class="text-muted">Designed and Developed by me</span>
         </div>
-    </footer>
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  </div>
+      </footer>
+  
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </body>
 </html>
+  
